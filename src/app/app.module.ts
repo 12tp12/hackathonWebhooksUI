@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { CreateWsaWebhookComponent } from './create-wsa-webhook/create-wsa-webhook.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateWsaWebhookComponent
   ],
   imports: [
     BrowserModule
