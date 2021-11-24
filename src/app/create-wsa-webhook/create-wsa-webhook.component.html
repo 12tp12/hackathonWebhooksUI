@@ -1,1 +1,28 @@
-<p>create-wsa-webhook works!</p>
+<div class="centered-form-container">
+    <form class="centered-form-item"  [formGroup]="webhook" (ngSubmit)="onSubmit()">
+            <h2 class="centered-form-heading">Create Webhook</h2>
+            <div class="form-group">
+                    <input type="text" formControlName="url" class="form-control" placeholder="URL"/>
+                    <div *ngIf="isInputValidationFailed(form['url'])" class="validation-err-container">
+                            <!-- <div *ngIf="form.url.errors['required']">URL is required</div> -->
+                    </div>
+            </div>
+            <div class="form-group">
+                    <input type="text" formControlName="filters" class="form-control" placeholder="Filters"/>
+                    <div *ngIf="isInputValidationFailed(form['filters'])" class="validation-err-container">
+                            <!-- <div *ngIf="form['filters']['required']">Filters are required</div> -->
+                    </div>
+            </div>
+            <div class="form-group">
+                    <input id="password" type="kuku" formControlName="password" placeholder="KUKU" class="form-control" />
+                    <div *ngIf="isInputValidationFailed(form['kuku'])" class="validation-err-container">
+                            <!-- <div *ngIf="form['kuku'].errors['required']">KUKU is required</div> -->
+                    </div>
+            </div>
+            <div class="form-group">
+                    <button [disabled]="isRegisterButtonDisabled()" class="btn btn-primary">Create</button>
+
+                    <a (click)="cancelCreation()" class="btn btn-link">Cancel</a>
+            </div>
+    </form>
+</div>

@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { CreateWsaWebhookComponent } from './create-wsa-webhook/create-wsa-webhook.component';
 
@@ -10,7 +11,10 @@ import { CreateWsaWebhookComponent } from './create-wsa-webhook/create-wsa-webho
     CreateWsaWebhookComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
