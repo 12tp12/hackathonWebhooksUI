@@ -1,0 +1,22 @@
+.centered-form-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: auto auto auto;
+  }
+
+
+  .centered-form-item {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-top: 20pt;
+    text-align: center;
+  }
+
+  .action-buttons {
+      margin: 15pt;
+  }
+
+  .wsahook-form-item {
+    margin: 10pt;
+  }
+

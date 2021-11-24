@@ -7,5 +7,20 @@
   .app-title {
     text-align: center;
     margin: 15pt;
-    font-size: 25pt;
+    font-size: 30pt;
+    color: white;
   }
+
+  .header {
+    overflow: hidden;
+    background-color: #00b4d8;
+    padding: 20pt 10pt;
+  }
+  .mat-add {
+    background-color: #00b4d8;
+    color: #fff;
+}
+
+.fab-content {
+  font-size: 17pt;
+}

@@ -16,6 +16,7 @@ export class CreateWsaWebhookComponent implements OnInit {
   ngOnInit() {
     this.webhook = this.formBuilder.group({
       url: ['', Validators.required],
+      name: ['', Validators.required],
       filters: ['', [Validators.required, Validators.email]],
       kuku: ['', [Validators.required, Validators.minLength(3)]]
     });

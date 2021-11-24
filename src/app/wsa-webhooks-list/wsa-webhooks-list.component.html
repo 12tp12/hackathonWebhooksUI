@@ -1,8 +1,10 @@
-<h1 class="h1-responsive app-title">WSA Webhooks</h1>
+<div class="header">
+  <h1 class="h1-responsive app-title">WSA Webhooks</h1>
+</div>
 
 <div *ngFor="let hook of webhooksList">
     <app-wsa-webhooks-list-item [webhook]="hook"></app-wsa-webhooks-list-item>
 </div>
 
-<button mat-fab class="fab-add-button" matTooltip="Create webhook" color="primary"
-  (click)="openCreateHookDialog()">+</button>
+<button mat-fab class="fab-add-button" matTooltip="Create webhook" color="add"
+  (click)="openCreateHookDialog()"><span class="fab-content">+</span></button>
