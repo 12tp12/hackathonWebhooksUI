@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CreateWsaWebhookComponent } from '../create-wsa-webhook/create-wsa-webhook.component';
 import { DialogsHelperService } from '../services/dialogs-helper.service';
@@ -10,7 +10,7 @@ import { WsaWebhook } from './../models/wsa-webhook';
   templateUrl: './wsa-webhooks-list.component.html',
   styleUrls: ['./wsa-webhooks-list.component.scss']
 })
-export class WsaWebhooksListComponent implements OnInit {
+export class WsaWebhooksListComponent implements OnInit, OnDestroy {
   webhooksList: WsaWebhook[] = [];
   subscription: Subscription = new Subscription();
   constructor(private wsaWebhooksService: WsaWebhooksService,
@@ -24,6 +24,11 @@ export class WsaWebhooksListComponent implements OnInit {
       })
     );
   }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
 
   public openCreateHookDialog() {
     this.dialogsHelperService.openDialog(CreateWsaWebhookComponent);
