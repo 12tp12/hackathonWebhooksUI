@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-wsa-webhook',
@@ -9,7 +10,8 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 export class CreateWsaWebhookComponent implements OnInit {
   public webhook: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,
+    private dialogRef: MatDialogRef<CreateWsaWebhookComponent>) {}
 
   ngOnInit() {
     this.webhook = this.formBuilder.group({
@@ -24,7 +26,7 @@ export class CreateWsaWebhookComponent implements OnInit {
   }
 
   public cancelCreation() {
-
+      this.dialogRef.close();
   }
 
   isRegisterButtonDisabled() {

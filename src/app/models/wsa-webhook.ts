@@ -1,4 +1,3 @@
-class WsaWebhook {
-    constructor(url: string) {
-    }
-  }
+export interface WsaWebhook {
+    url: string;
+}
