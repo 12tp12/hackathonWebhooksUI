@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CreateWsaWebhookComponent } from '../create-wsa-webhook/create-wsa-webhook.component';
 import { WsaWebhook } from '../models/wsa-webhook';
 import { DialogsHelperService } from '../services/dialogs-helper.service';
+import { ShowWsaWebhookComponent } from '../show-wsa-webhook/show-wsa-webhook.component';
 
 @Component({
   selector: 'app-wsa-webhooks-list-item',
@@ -11,8 +12,12 @@ import { DialogsHelperService } from '../services/dialogs-helper.service';
 export class WsaWebhooksListItemComponent implements OnInit {
   @Input() webhook: WsaWebhook;
   
-  constructor() { }
+  constructor(private dialogsHelperService: DialogsHelperService) { }
 
   ngOnInit(): void {
+  }
+
+  public showWebhook() {
+    this.dialogsHelperService.openDialog(ShowWsaWebhookComponent, null, this.webhook);
   }
 }
