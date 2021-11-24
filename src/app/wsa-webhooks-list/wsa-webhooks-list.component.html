@@ -1,3 +1,6 @@
 <div *ngFor="let hook of webhooksList">
     <app-wsa-webhooks-list-item [webhook]="hook"></app-wsa-webhooks-list-item>
 </div>
+
+<button mat-fab class="fab-add-button" matTooltip="Create webhook" color="primary"
+  (click)="openCreateHookDialog()">+</button>

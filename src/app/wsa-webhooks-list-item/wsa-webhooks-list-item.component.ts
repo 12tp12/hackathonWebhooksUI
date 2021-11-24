@@ -11,12 +11,8 @@ import { DialogsHelperService } from '../services/dialogs-helper.service';
 export class WsaWebhooksListItemComponent implements OnInit {
   @Input() webhook: WsaWebhook;
   
-  constructor(private dialogsHelperService: DialogsHelperService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  public openCreateHookDialog() {
-    this.dialogsHelperService.openDialog(CreateWsaWebhookComponent);
   }
 }

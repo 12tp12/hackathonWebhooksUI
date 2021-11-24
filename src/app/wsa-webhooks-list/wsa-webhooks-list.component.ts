@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { CreateWsaWebhookComponent } from '../create-wsa-webhook/create-wsa-webhook.component';
 import { DialogsHelperService } from '../services/dialogs-helper.service';
 import { WsaWebhooksService } from '../services/wsa-webhooks.service';
 import { WsaWebhook } from './../models/wsa-webhook';
@@ -12,7 +13,8 @@ import { WsaWebhook } from './../models/wsa-webhook';
 export class WsaWebhooksListComponent implements OnInit {
   webhooksList: WsaWebhook[] = [];
   subscription: Subscription = new Subscription();
-  constructor(private wsaWebhooksService: WsaWebhooksService) { }
+  constructor(private wsaWebhooksService: WsaWebhooksService,
+    private dialogsHelperService: DialogsHelperService) { }
 
   ngOnInit(): void {
     this.subscription.add(
@@ -23,4 +25,7 @@ export class WsaWebhooksListComponent implements OnInit {
     );
   }
 
+  public openCreateHookDialog() {
+    this.dialogsHelperService.openDialog(CreateWsaWebhookComponent);
+  }
 }

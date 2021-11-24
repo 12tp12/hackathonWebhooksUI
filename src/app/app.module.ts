@@ -9,6 +9,7 @@ import { WsaWebhooksListItemComponent } from './wsa-webhooks-list-item/wsa-webho
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatButtonModule
   ],
   entryComponents: [
     CreateWsaWebhookComponent
